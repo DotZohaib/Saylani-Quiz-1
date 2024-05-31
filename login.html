@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0e0e0e;
+    font-family: 'Arial', sans-serif;
+    width: 100vw;
+}
+
+.login-container {
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #3b5998;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #355089;
+}
+
+#background-wrap {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.x1 {
+    width: 40px;
+    height: 40px;
+    left: 20%;
+    animation: bubble 10s infinite;
+}
+
+.x2 {
+    width: 60px;
+    height: 60px;
+    left: 40%;
+    animation: bubble 15s infinite;
+}
+
+.x3 {
+    width: 80px;
+    height: 80px;
+    left: 60%;
+    animation: bubble 20s infinite;
+}
+
+.x4 {
+    width: 100px;
+    height: 100px;
+    left: 80%;
+    animation: bubble 25s infinite;
+}
+
+.x5 {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    animation: bubble 30s infinite;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+    }
+}
+
+#box{
+    padding-right: 20px;
+}
+
+
+
+</style>
+<body>
+    <div class="login-container">
+      <div id="box">
+        <h1>Login</h1>
+        <form>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+    <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
